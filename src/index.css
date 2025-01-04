@@ -136,6 +136,7 @@ background-color: white;
 
 .main-content {
   display: flex;
+  align-items: flex-start;
   flex: 1;
   padding: 20px;
   background-color: #ecf0f1;
@@ -183,7 +184,7 @@ background-color: white;
 
 .side-tab.active{
   visibility: visible;
-  width: 30%;
+  width: 35%;
 }
 .side-tab-content {
   padding: 20px;
@@ -221,4 +222,14 @@ background-color: white;
   50% {
     transform: scale(2);
   }
+}
+
+.button-group{
+  display: flex;
+  gap: 10px;
+}
+
+.map{
+  width: 100%;
+  object-fit: fill;
 }
