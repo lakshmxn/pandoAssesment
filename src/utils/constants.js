@@ -3,7 +3,7 @@ const logisticsData = [
       id: 1,
       origin: {
         city: "Laredo",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       stops: {
         pickup: {
@@ -63,7 +63,7 @@ const logisticsData = [
       ],
       destination: {
         city: "Grand Prairie",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       carrier: {
         name: "CH Robinson",
@@ -74,6 +74,7 @@ const logisticsData = [
       },
       utilization: {
         percentage: 74,
+        type:'Wt',
         vehicle: "53 Ft Trailer"
       },
       total: {
@@ -89,16 +90,16 @@ const logisticsData = [
       id: 2,
       origin: {
         city: "Laredo",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       stops: {
         pickup: {
           count: 1,
-          hasdocks: true
+          hasdocks: false
         },
         drop: {
           count: 2,
-          hasdocks: false
+          hasdocks: true
         }
       },
       timeline:[
@@ -149,18 +150,19 @@ const logisticsData = [
       ],
       destination: {
         city: "Grand Prairie",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       carrier: {
         name: "CH Robinson",
         type: "FTL",
-        totalDistance: "300 mi",
-        totalWeight: "2500 lbs",
-        totalVolume: "1200 cft",
+        totalDistance: "300",
+        totalWeight: "2500",
+        totalVolume: "1200",
       },
       utilization: {
         percentage: 74,
-        vehicle: "53 Ft Trailer"
+        vehicle: "53 Ft Trailer",
+        type: "Wt"
       },
       total: {
         weight: 8055,
@@ -175,7 +177,7 @@ const logisticsData = [
       id: 3,
       origin: {
         city: "Laredo",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       stops: {
         pickup: {
@@ -235,15 +237,15 @@ const logisticsData = [
       ],
       destination: {
         city: "Grand Prairie",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       carrier: {
         name: "American Freight Log",
         type: "Private Fleet",
         vehicleId: "MH 3092",
-        totalDistance: "300 mi",
-        totalWeight: "2500 lbs",
-        totalVolume: "1200 cft",
+        totalDistance: "300",
+        totalWeight: "2500",
+        totalVolume: "1200",
       },
       utilization: {
         percentage: 90,
@@ -251,8 +253,8 @@ const logisticsData = [
         type: "Vol"
       },
       total: {
-        volume: 900,
-        volumeUnit: "cft",
+        weight: 900,
+        weightUnit: "cft",
         quantity: 33,
         quantityUnit: "pcs",
         pallets: 2,
@@ -263,7 +265,7 @@ const logisticsData = [
       id: 4,
       origin: {
         city: "Laredo",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       stops: {
         pickup: {
@@ -277,7 +279,7 @@ const logisticsData = [
       },
       destination: {
         city: "Grand Prairie",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       timeline:[
         {
@@ -328,13 +330,14 @@ const logisticsData = [
       carrier: {
         name: "CH Robinson",
         type: "FTL",
-        totalDistance: "300 mi",
-        totalWeight: "2500 lbs",
-        totalVolume: "1200 cft",
+        totalDistance: "300",
+        totalWeight: "2500",
+        totalVolume: "1200",
       },
       utilization: {
         percentage: 74,
-        vehicle: "53 Ft Trailer"
+        vehicle: "53 Ft Trailer",
+        type: "Wt"
       },
       total: {
         weight: 8055,
@@ -349,7 +352,7 @@ const logisticsData = [
       id: 5,
       origin: {
         city: "Laredo",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       stops: {
         pickup: {
@@ -363,15 +366,15 @@ const logisticsData = [
       },
       destination: {
         city: "Grand Prairie",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       carrier: {
         name: "Monroe Transport",
         type: "Private Fleet",
         vehicleId: "1AC0991",
-        totalDistance: "300 mi",
-        totalWeight: "2500 lbs",
-        totalVolume: "1200 cft",
+        totalDistance: "300",
+        totalWeight: "2500",
+        totalVolume: "1200",
       },
       timeline:[
         {
@@ -421,7 +424,8 @@ const logisticsData = [
       ],
       utilization: {
         percentage: 74,
-        vehicle: "1AC0991"
+        vehicle: "1AC0991",
+        type: "Wt"
       },
       total: {
         weight: 8055,
@@ -436,7 +440,7 @@ const logisticsData = [
       id: 6,
       origin: {
         city: "Laredo",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       stops: {
         pickup: {
@@ -450,14 +454,14 @@ const logisticsData = [
       },
       destination: {
         city: "Grand Prairie",
-        state: "TX"
+        state: "TX, <Pincode>"
       },
       carrier: {
         name: "CH Robinson",
         type: "FTL",
-        totalDistance: "300 mi",
-        totalWeight: "2500 lbs",
-        totalVolume: "1200 cft",
+        totalDistance: "300",
+        totalWeight: "2500",
+        totalVolume: "1200",
       },
       timeline:[
         {
@@ -511,8 +515,8 @@ const logisticsData = [
         type: "Vol"
       },
       total: {
-        volume: 1200,
-        volumeUnit: "cft",
+        weight: 1200,
+        weightUnit: "cft",
         quantity: 33,
         quantityUnit: "pcs",
         pallets: 2,

@@ -56,19 +56,20 @@ const PlannedGroup = () => {
       <table className="table">
         <thead>
           <tr>
-            <th>
+            <th style={{width:'4%'}}>
               <input
                 type="checkbox"
                 checked={isAllSelected}
                 onChange={handleSelectAll}
               />
             </th>
-            <th>S.NO.</th>
-            <th>ORIGIN</th>
-            <th>DESTINATION</th>
-            <th>CARRIER | TYPE</th>
-            <th>MAX UTILIZATION | VEHICLE</th>
-            <th>TOTAL | WEIGHT | QUANTITY</th>
+            <th style={{width:'4%'}}>S.NO.</th>
+            <th style={{width:'20%'}}>ORIGIN</th>
+            <th style={{width:'14%'}}>DESTINATION</th>
+            <th style={{width:'13%'}}>CARRIER | TYPE</th>
+            <th style={{width:'14%'}}>MAX UTILIZATION | VEHICLE</th>
+            {!isSideTabOpen && <th style={{width:'14%','paddingLeft':'20px'}}>TOTAL | WEIGHT | QUANTITY</th>}
+            <th style={{width:'14%'}}></th>
           </tr>
         </thead>
         <tbody>
@@ -87,33 +88,111 @@ const PlannedGroup = () => {
                 </div>
               </td>
               <td>{row.id}</td>
-              <td>{row.origin?.city} {row.origin?.state}</td>
-              <td>{row.destination?.city} {row.destination?.state}</td>
-              <td>{row.carrier?.name} {row.carrier?.type}</td>
-              <td>{row.utilization?.percentage} {row.utilization?.vehicle}</td>
               <td>
-                <div>
-                  <span>
-                    {row.total?.weight} {row.total?.weightUnit}
-                  </span>
-                  <span>
-                    orders: {row.total?.orders}
-                  </span>
+                <div style={{display: 'flex','justify-content': 'space-between'}}>
+                  <div className='row-item'>
+                    <div className='row-item-primary'>
+                      {row.origin?.city}
+                    </div>
+                    <div className='row-item-secondary'>
+                      {row.origin?.state}
+                    </div>
+                  </div>
+                  {!isSideTabOpen && 
+                    <div className='pick-drop'>
+                      <div className='flex pick-drop-icons'>
+                        {row.stops.pickup.hasdocks ? 
+                          <div className='tag docx-bg'>x-docx</div>
+                        :<div className='red-45'></div>}
+                        <div className='horizontal-line-dotted'></div>
+                        {row.stops.drop.hasdocks ? 
+                          <div className='tag docx-bg'>x-docx</div>
+                        :<div className='green-45'></div>}
+                      </div>
+                      <div className='flex'>
+                        <div className='tag stop-bg'>{row.stops.pickup.count + ' pickup(s)'}</div>
+                        <div className='tag stop-bg'>{row.stops.drop.count + ' drop(s)'}</div>
+                      </div>
+                    </div>
+                  }
                 </div>
-                <div>
-                  <span>
-                    {row.total?.quantity} {row.total?.quantityUnit}
-                  </span>
-                  <span>
-                    pallets: {row.total?.pallets}
-                  </span>
+              </td>
+              <td>
+                <div className='row-item'>
+                  <div className='row-item-primary'>
+                    {row.destination?.city}
+                  </div>
+                  <div className='row-item-secondary'>
+                    {row.destination?.state}
+                  </div>
                 </div>
+              </td>
+              <td>
+                <div className='row-item'>
+                  <div className='row-item-primary'>
+                    {row.carrier?.name}
+                  </div>
+                  <div className='row-item-secondary'>
+                    {row.carrier?.type}
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div className='row-item'>
+                  <div className='row-item-semi-bold'>
+                    {row.utilization?.percentage+ ' %'}
+                    <div className='progress-bar'>
+                      <div className={`progress ${
+                  row.utilization?.type == 'Vol'? ' vol':'wt'}`}
+                  style={{width:`${row.utilization?.percentage}%`}}></div>
+                    </div>
+                    <div className={`tag ${row.utilization?.type == 'Vol'?'vol':'wt'}`}>{row.utilization?.type}</div>
+                  </div>
+                  <div className='row-item-secondary'>
+                    {row.utilization?.vehicle}
+                  </div>
+                </div>
+              </td>
+              {!isSideTabOpen &&  <td style={{'border-left':'1px dotted grey','paddingLeft':'20px'}}>
+                <div className='row-item'>
+                  <div className='row-item-unit-wrapper'>
+                    <div className='row-item-units'>
+                      {row.total?.weight}
+                      <span className='units'>
+                        {row.total?.weightUnit}
+                      </span>
+                    </div>
+                    <div className='row-item-units'>
+                      {row.total?.quantity}
+                      <div className='units'>
+                        {row.total?.quantityUnit}
+                      </div>
+                    </div>
+                  </div>
+                  <div className='row-item-unit-wrapper'>
+                    <div className='row-item-units'>
+                    <span className='tag'>orders: </span>{row.total?.orders}
+                    </div>
+                    <div className='row-item-units'>
+                      <span className='tag'>
+                        pallets: 
+                      </span>
+                      {row.total?.pallets}
+                    </div>
+                  </div>
+                </div>
+              </td>}
+              <td>
+                <button>
+                  <img className='load-icon' src='assets/start-loading.png'/>
+                  <div className='hash-icon'>#</div>
+                  {!isSideTabOpen && <span>MATERIALS</span>}
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-
       <div className={isSideTabOpen ? 'side-tab active' : 'side-tab'}>
         {isSideTabOpen && (
           <>
@@ -136,60 +215,60 @@ const PlannedGroup = () => {
             {activeTab === 'details' && (
               <div className='side-tab-content'>
                 <div className='shipment-plan-content'>
-                <div className="shipment-info">
-                  <div className="info-row">
-                    <span>Carrier: {selectedRow.carrier.name}</span>
-                    <span>Total Distance: {selectedRow.carrier.totalDistance} mi</span>
+                  <div className="shipment-info">
+                    <div className="info-row">
+                      <span>Carrier: {selectedRow.carrier.name}</span>
+                      <span>Total Distance: {selectedRow.carrier.totalDistance} mi</span>
+                    </div>
+                    <div className="info-row">
+                      <span>Total Wt. {selectedRow.carrier.totalWeight} lbs</span>
+                      <span>Total Vol. {selectedRow.carrier.totalVolume} cft</span>
+                    </div>
                   </div>
-                  <div className="info-row">
-                    <span>Total Wt. {selectedRow.carrier.totalWeight} lbs</span>
-                    <span>Total Vol. {selectedRow.carrier.totalVolume} cft</span>
+                  <div className='shipment-plan-header'>
+                    <div className='title'>
+                      Shipment Plan
+                    </div>
+                    <button onClick={toggleTimelineExpand}>
+                      EXPAND PLAN
+                    </button>
                   </div>
-                </div>
-                <div className='shipment-plan-header'>
-                  <div className='title'>
-                    Shipment Plan
-                  </div>
-                  <button onClick={toggleTimelineExpand}>
-                    EXPAND PLAN
-                  </button>
-                </div>
-                <div className='shipment-timeline'>
-                  {selectedRow.timeline.map((stop,index)=>(
-                    <>
-                      <div className='shipment-timeline-header'>
-                        <div>
-                          <img src={`/assets/${stop.type}-arrow.svg`}/>
-                        </div>
-                        <div>
-                          <div>{stop.name}</div>
-                          <div>{stop.address}</div>
-                        </div>
-                      </div>
-                      <div className='shipment-timeline-description'>
-                      <div className="vertical-timeline">
-                        {index !== selectedRow.timeline.length - 1 && 
-                          <> 
-                            <div className='circle'></div>
-                            <div className='line'></div>
-                            <div className='circle'></div>
-                          </>
-                        }
-                      </div>
-                        {timelineExpand && <div className="shipment-info">
-                          <div className="info-row">
-                            <span>Wt. {stop.details.weight}lbs</span>
-                            <span>Vol. {stop.details.volume} cft</span>
+                  <div className='shipment-timeline'>
+                    {selectedRow.timeline.map((stop,index)=>(
+                      <>
+                        <div className='shipment-timeline-header'>
+                          <div>
+                            <img src={`/assets/${stop.type}-arrow.svg`}/>
                           </div>
-                          <div className="info-row">
-                            <span>Qty. {stop.details.quantity} pcs.</span>
-                            <span>Plt. {stop.details.pallets}</span>
+                          <div>
+                            <div>{stop.name}</div>
+                            <div>{stop.address}</div>
                           </div>
                         </div>
-                        }
-                      </div>
-                  </>
-                ))}
+                        <div className='shipment-timeline-description'>
+                        <div className="vertical-timeline">
+                          {index !== selectedRow.timeline.length - 1 && 
+                            <> 
+                              <div className='circle'></div>
+                              <div className='line'></div>
+                              <div className='circle'></div>
+                            </>
+                          }
+                        </div>
+                          {timelineExpand && <div className="shipment-info">
+                            <div className="info-row">
+                              <span>Wt. {stop.details.weight}lbs</span>
+                              <span>Vol. {stop.details.volume} cft</span>
+                            </div>
+                            <div className="info-row">
+                              <span>Qty. {stop.details.quantity} pcs.</span>
+                              <span>Plt. {stop.details.pallets}</span>
+                            </div>
+                          </div>
+                          }
+                        </div>
+                    </>
+                  ))}
                   </div>
                 </div>
               </div>
