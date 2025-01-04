@@ -50,11 +50,14 @@ nav{
 }
 
 button{
-  padding: 6px 10px 8px 10px;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 }
 
+nav button{
+  padding: 6px 10px 8px 10px;
+}
 .secondary-button{
   background: rgba(231, 231, 231, 1);
 }
@@ -139,25 +142,23 @@ background-color: white;
   align-items: flex-start;
   flex: 1;
   padding: 20px;
-  background-color: #ecf0f1;
+  background-color: #F3F6FC;
 }
 
 .table {
   width: 100%;
   min-width: 70%;
   overflow-x: scroll;
-  border-collapse: collapse;
+  border-collapse:separate;
+  border-spacing:0 10px;
 }
 
 .table th, .table td {
-  border: 1px solid #bdc3c7;
   padding: 8px 12px;
-  text-align: left;
 }
 
-.table th {
-  background-color: #3498db;
-  color: white;
+tbody tr{
+  background-color: white;
 }
 
 .plan-container{
@@ -186,8 +187,12 @@ background-color: white;
   visibility: visible;
   width: 35%;
 }
-.side-tab-content {
+.side-tab-toggle {
   padding: 20px;
+}
+
+.side-tab-content {
+  padding: 10px;
 }
 
 .close-btn {
@@ -233,3 +238,92 @@ background-color: white;
   width: 100%;
   object-fit: fill;
 }
+
+.table-checkbox{
+  align-content: center;
+  text-align: center;
+  justify-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #D9E6FF;
+  cursor: pointer;
+}
+
+tbody input[type="checkbox"]{
+  display: none;
+}
+
+tbody .table-checkbox:hover input[type="checkbox"] {
+  display: block;
+  background-color: white;
+}
+
+tbody .table-checkbox:hover img {
+  display: none;
+}
+
+
+/* side content */
+.shipment-plan-header{
+  display: flex;
+  justify-content: space-between;
+  .title{
+    color: #005399;
+  }
+  button{
+    background-color: transparent;
+    color: #0076DD;
+  }
+}
+
+.shipment-plan-content{
+
+}
+.shipment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #EEF2F4;
+  padding: 10px 15px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shipment-timeline-header{
+  display: flex;
+  gap: 8px;
+}
+
+.circle{
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #515151;
+}
+
+.shipment-timeline-description{
+  min-height: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.line{
+  height: 100%;
+  background: #0076DD;
+  width: 1.5px;
+  flex-grow: 1;
+}
+
+.vertical-timeline{
+  width: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* side content */
+

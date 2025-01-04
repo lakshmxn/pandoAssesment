@@ -15,13 +15,62 @@ const logisticsData = [
           hasdocks: false
         }
       },
+      timeline:[
+        {
+          type:'drop',
+          name: "American Cleaning Supply",
+          address: "Laredo, TX 78045, USA",
+          details: {
+            weight: "1978.75",
+            volume: "127.38",
+            quantity: "179",
+            pallets: "2"
+          }
+        },
+        {
+          type:'drop',
+          name: "3M Co.",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "768.75",
+            volume: "71.00",
+            quantity: "21",
+            pallets: "1"
+          }
+        },
+        {
+          type:'drop',
+          name: "Alliance Sports Group",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "197",
+            volume: "121.30",
+            quantity: "79",
+            pallets: "2"
+          }
+        },
+        {
+          type:'pickup',
+          name: "Ace Maumelle RSC",
+          address: "Maumelle, Arkansas 72113, USA",
+          details: {
+            weight: "2944.5",
+            volume: "319.68",
+            quantity: "279",
+            pallets: "2"
+          }
+        }
+      ],
       destination: {
         city: "Grand Prairie",
         state: "TX"
       },
       carrier: {
         name: "CH Robinson",
-        type: "FTL"
+        type: "FTL",
+        totalDistance: "300",
+        totalWeight: "2500",
+        totalVolume: "1200",
       },
       utilization: {
         percentage: 74,
@@ -33,7 +82,7 @@ const logisticsData = [
         quantity: 33,
         quantityUnit: "pcs",
         pallets: 2,
-        orders: 40
+        orders: 40,
       },
     },
     {
@@ -52,13 +101,62 @@ const logisticsData = [
           hasdocks: false
         }
       },
+      timeline:[
+        {
+          type:'drop',
+          name: "American Cleaning Supply",
+          address: "Laredo, TX 78045, USA",
+          details: {
+            weight: "1978.75",
+            volume: "127.38",
+            quantity: "179",
+            pallets: "2"
+          }
+        },
+        {
+          type:'drop',
+          name: "3M Co.",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "768.75",
+            volume: "71.00",
+            quantity: "21",
+            pallets: "1"
+          }
+        },
+        {
+          type:'drop',
+          name: "Alliance Sports Group",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "197",
+            volume: "121.30",
+            quantity: "79",
+            pallets: "2"
+          }
+        },
+        {
+          type:'pickup',
+          name: "Ace Maumelle RSC",
+          address: "Maumelle, Arkansas 72113, USA",
+          details: {
+            weight: "2944.5",
+            volume: "319.68",
+            quantity: "279",
+            pallets: "2"
+          }
+        }
+      ],
       destination: {
         city: "Grand Prairie",
         state: "TX"
       },
       carrier: {
         name: "CH Robinson",
-        type: "FTL"
+        type: "FTL",
+        totalDistance: "300 mi",
+        totalWeight: "2500 lbs",
+        totalVolume: "1200 cft",
       },
       utilization: {
         percentage: 74,
@@ -89,6 +187,52 @@ const logisticsData = [
           hasdocks: false
         }
       },
+      timeline:[
+        {
+          type:'drop',
+          name: "American Cleaning Supply",
+          address: "Laredo, TX 78045, USA",
+          details: {
+            weight: "1978.75",
+            volume: "127.38",
+            quantity: "179",
+            pallets: "2"
+          }
+        },
+        {
+          type:'drop',
+          name: "3M Co.",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "768.75",
+            volume: "71.00",
+            quantity: "21",
+            pallets: "1"
+          }
+        },
+        {
+          type:'drop',
+          name: "Alliance Sports Group",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "197",
+            volume: "121.30",
+            quantity: "79",
+            pallets: "2"
+          }
+        },
+        {
+          type:'pickup',
+          name: "Ace Maumelle RSC",
+          address: "Maumelle, Arkansas 72113, USA",
+          details: {
+            weight: "2944.5",
+            volume: "319.68",
+            quantity: "279",
+            pallets: "2"
+          }
+        }
+      ],
       destination: {
         city: "Grand Prairie",
         state: "TX"
@@ -96,7 +240,10 @@ const logisticsData = [
       carrier: {
         name: "American Freight Log",
         type: "Private Fleet",
-        vehicleId: "MH 3092"
+        vehicleId: "MH 3092",
+        totalDistance: "300 mi",
+        totalWeight: "2500 lbs",
+        totalVolume: "1200 cft",
       },
       utilization: {
         percentage: 90,
@@ -132,9 +279,58 @@ const logisticsData = [
         city: "Grand Prairie",
         state: "TX"
       },
+      timeline:[
+        {
+          type:'drop',
+          name: "American Cleaning Supply",
+          address: "Laredo, TX 78045, USA",
+          details: {
+            weight: "1978.75",
+            volume: "127.38",
+            quantity: "179",
+            pallets: "2"
+          }
+        },
+        {
+          type:'drop',
+          name: "3M Co.",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "768.75",
+            volume: "71.00",
+            quantity: "21",
+            pallets: "1"
+          }
+        },
+        {
+          type:'drop',
+          name: "Alliance Sports Group",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "197",
+            volume: "121.30",
+            quantity: "79",
+            pallets: "2"
+          }
+        },
+        {
+          type:'pickup',
+          name: "Ace Maumelle RSC",
+          address: "Maumelle, Arkansas 72113, USA",
+          details: {
+            weight: "2944.5",
+            volume: "319.68",
+            quantity: "279",
+            pallets: "2"
+          }
+        }
+      ],
       carrier: {
         name: "CH Robinson",
-        type: "FTL"
+        type: "FTL",
+        totalDistance: "300 mi",
+        totalWeight: "2500 lbs",
+        totalVolume: "1200 cft",
       },
       utilization: {
         percentage: 74,
@@ -172,8 +368,57 @@ const logisticsData = [
       carrier: {
         name: "Monroe Transport",
         type: "Private Fleet",
-        vehicleId: "1AC0991"
+        vehicleId: "1AC0991",
+        totalDistance: "300 mi",
+        totalWeight: "2500 lbs",
+        totalVolume: "1200 cft",
       },
+      timeline:[
+        {
+          type:'drop',
+          name: "American Cleaning Supply",
+          address: "Laredo, TX 78045, USA",
+          details: {
+            weight: "1978.75",
+            volume: "127.38",
+            quantity: "179",
+            pallets: "2"
+          }
+        },
+        {
+          type:'drop',
+          name: "3M Co.",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "768.75",
+            volume: "71.00",
+            quantity: "21",
+            pallets: "1"
+          }
+        },
+        {
+          type:'drop',
+          name: "Alliance Sports Group",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "197",
+            volume: "121.30",
+            quantity: "79",
+            pallets: "2"
+          }
+        },
+        {
+          type:'pickup',
+          name: "Ace Maumelle RSC",
+          address: "Maumelle, Arkansas 72113, USA",
+          details: {
+            weight: "2944.5",
+            volume: "319.68",
+            quantity: "279",
+            pallets: "2"
+          }
+        }
+      ],
       utilization: {
         percentage: 74,
         vehicle: "1AC0991"
@@ -209,8 +454,57 @@ const logisticsData = [
       },
       carrier: {
         name: "CH Robinson",
-        type: "FTL"
+        type: "FTL",
+        totalDistance: "300 mi",
+        totalWeight: "2500 lbs",
+        totalVolume: "1200 cft",
       },
+      timeline:[
+        {
+          type:'drop',
+          name: "American Cleaning Supply",
+          address: "Laredo, TX 78045, USA",
+          details: {
+            weight: "1978.75",
+            volume: "127.38",
+            quantity: "179",
+            pallets: "2"
+          }
+        },
+        {
+          type:'drop',
+          name: "3M Co.",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "768.75",
+            volume: "71.00",
+            quantity: "21",
+            pallets: "1"
+          }
+        },
+        {
+          type:'drop',
+          name: "Alliance Sports Group",
+          address: "Roanoke, TX 76262, USA",
+          details: {
+            weight: "197",
+            volume: "121.30",
+            quantity: "79",
+            pallets: "2"
+          }
+        },
+        {
+          type:'pickup',
+          name: "Ace Maumelle RSC",
+          address: "Maumelle, Arkansas 72113, USA",
+          details: {
+            weight: "2944.5",
+            volume: "319.68",
+            quantity: "279",
+            pallets: "2"
+          }
+        }
+      ],
       utilization: {
         percentage: 90,
         vehicle: "53 Ft Trailer",
