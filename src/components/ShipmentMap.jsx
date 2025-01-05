@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 const mapContainerStyle = {
   position: 'relative',
   width: '100%',
-  height: '75%'
+  flex: 1
 };
 
 const mapStyle = {
