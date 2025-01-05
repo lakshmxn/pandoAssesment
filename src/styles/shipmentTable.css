@@ -1,0 +1,146 @@
+.table-checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #D9E6FF;
+    cursor: pointer;
+    img{
+    width: 14px;
+    height:14px;
+    }
+}
+
+tbody input[type="checkbox"]{
+    display: none;
+}
+
+tbody .table-checkbox:hover input[type="checkbox"] {
+    display: block;
+    background-color: white;
+}
+
+
+tbody .table-checkbox:hover img {
+    display: none;
+}
+
+tbody .table-checkbox input[type="checkbox"]:checked ~ img {
+    display: none;
+}
+
+tbody .table-checkbox input[type="checkbox"]:checked {
+    display: block;
+}
+
+tr > td:first-of-type{
+    position: relative;
+}
+
+.table-checkbox{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    translate: 50% -50%;
+}
+
+tr > th:first-of-type{
+    text-align: center;
+    justify-items: center;
+}
+
+
+.table {
+    width: 100%;
+    border-collapse:separate;
+    border-spacing:0 10px;
+}
+
+.table-wrapper{
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    flex: 1;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.table-wrapper thead{
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background-color: #F3F6FC;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.content-wrapper.active {
+    width: calc(100% - 350px);
+    overflow-x: auto;
+  }
+
+.table th{
+    color: #005399;
+    gap: 10px;
+    padding: 10px 8px 0 8px;
+    font: 600 10px / 13.6px 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.table td {
+    padding: 10px 8px;
+    height: 40px;
+}
+
+tbody tr{
+    background-color: #FAFAFA;
+}
+
+tbody tr:hover{
+    background-color: #FFFFFF;
+}
+
+.column-spacer {
+    width: 1%;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.table-divider{
+    border-left:1px dotted #E2EAEC;
+    height:100%;
+    padding:0px 1px;
+}
+
+
+td{
+    button{
+    padding: 0 5px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color:transparent;
+    color: #376F99;
+    .hash-icon{
+        display: none;
+    }
+    }
+    button:hover{
+    background-color: #E9F1F5;
+    .load-icon{
+        display: none;
+    }
+    .hash-icon{
+        display: block;
+    }
+    }
+}

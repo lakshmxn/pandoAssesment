@@ -1,0 +1,54 @@
+.sidenav {
+    width: 40px;
+    background-color: #D9E6FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.icon {
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon.active{
+background-color: white;
+}
+
+.icon:hover {
+    background-color: #0080ff;
+}
+
+.blinking-dot.sucess{
+    background-color: #1FCD93;
+}
+
+.blinking-dot.rejected{
+    background-color: #D26568;
+}
+
+.blinking-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100%;
+    animation: blink-grow 2s ease-in-out infinite;
+}
+
+@keyframes blink-grow {
+    0%, 100% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(2);
+    }
+}

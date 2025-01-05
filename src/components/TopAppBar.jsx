@@ -1,15 +1,12 @@
 import React from 'react'
-
+import Breadcrumbs from './BreadCrumbs';
 const TopAppBar = () => {
+
+  const breadcrumbs = ['New Plan', 'New Plan Name'];
+
   return (
     <nav> 
-      <div className='bread-crumbs'>
-        <span>New Plan</span>
-        <span>/</span>
-        <span className='active-route'>
-          &lt;New Plan Name&gt;
-        </span>
-      </div>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className='button-group'>
         <button className='secondary-button'>
           Create Shipment
