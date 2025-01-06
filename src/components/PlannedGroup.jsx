@@ -140,7 +140,7 @@ const PlannedGroup = () => {
                     Shipment Plan
                   </div>
                   <button onClick={toggleTimelineExpand}>
-                    EXPAND PLAN
+                    {!timelineExpand?'EXPAND PLAN':'COLLAPSE PLAN'}
                   </button>
                 </div>
                 <div className='shipment-timeline'>
