@@ -79,13 +79,12 @@ tr > th:first-of-type{
 }
 
 .content-wrapper.active {
-    width: calc(100% - 350px);
+    width: calc(100% - 300px);
     overflow-x: auto;
   }
 
 .table th{
     color: #005399;
-    gap: 10px;
     padding: 10px 8px 0 8px;
     font: 600 10px / 13.6px 'Open Sans', sans-serif;
     text-transform: uppercase;

@@ -65,6 +65,7 @@ button{
   border: none;
   cursor: pointer;
   text-transform: uppercase;
+  width: max-content;
 }
 
 .secondary-button{
@@ -209,7 +210,7 @@ button{
 .side-tab.active{
   visibility: visible;
   width: 30%;
-  min-width: 350px;
+  min-width: 300px;
   word-break: break-all;
 }
 
