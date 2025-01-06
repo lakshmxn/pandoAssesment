@@ -143,3 +143,19 @@ td{
     }
     }
 }
+
+
+.progress-bar{
+    width: 100px;
+    height: 14px;
+    background-color: #F3F6FC;
+    border-radius: 2px;
+  
+  }
+  
+  .progress{
+    opacity: 40%;
+    border-radius: 2px;
+    height: 100%;
+  }
+  
